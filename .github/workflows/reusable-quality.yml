@@ -33,5 +33,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Build
-      run: docker build -t 0merd/Dockerfile
+      run: docker build -t build1.
 
