@@ -3,7 +3,24 @@ name: main_workflow
 on: [push,pull_request]
 
 jobs:
-  call-reusable-quality-workflow:
+  call-reusable-quality-workflow1:
     uses: ./.github/workflows/reusable-quality.yml
-    
+    with:
+      python-version: '3.9'
+      action: 'test'
+  call-reusable-quality-workflow2:
+    uses: ./.github/workflows/reusable-quality.yml
+    with:
+      python-version: '3.10'
+      action: 'test'
+  call-reusable-quality-workflow3:
+    uses: ./.github/workflows/reusable-quality.yml
+    with:
+      python-version: '3.9'
+      action: 'lint'
+  call-reusable-quality-workflow4:
+    uses: ./.github/workflows/reusable-quality.yml
+    with:
+      python-version: '3.10'
+      action: 'lint'
   
