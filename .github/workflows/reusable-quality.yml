@@ -3,19 +3,19 @@ on:
     inputs:
       python-version:
         required: true
-        type: string
+        type: 'string'
       action:
         required: true
-        type: string
+        type: 'string'
 jobs:
   run_action:
-    if: [${inputs.python-version} == '3.9',${inputs.python-version} == '3.10']
+    if: ${{inputs.python-version}} == '3.9' || ${{inputs.python-version}} == '3.10'
     runs-on: ubuntu-latest
     steps:
-      name: Checkout
-      uses: actions/checout@v4
-      name: Set up Python
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{inputs.python-version}}
+       python-version: ${{inputs.python-version}}
      
