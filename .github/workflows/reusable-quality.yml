@@ -21,8 +21,8 @@ jobs:
     - name: Set up Req
       run: pip install -r requirments.txt
     - name: Run Lint
-      if:  ${{inputs.action}} == 'lint' 
+      if:  ${{inputs.action == 'lint'}}
       run: flake8 src tests
     - name: Run Test
-      if: ${{inputs.action}} == 'test'
+      if: ${{inputs.action == 'test'}}
       run: PYTHONPATH=src pytest
